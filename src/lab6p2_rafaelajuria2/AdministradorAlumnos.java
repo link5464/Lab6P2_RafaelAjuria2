@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author rajur
  */
-public class AdministradorAlumnos {
+public class AdministradorAlumnos { 
     ArrayList<Alumno> AlumnosGuardados = new ArrayList();
     File Archivo = null;
 

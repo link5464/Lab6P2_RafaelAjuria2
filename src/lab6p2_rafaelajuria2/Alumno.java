@@ -16,7 +16,7 @@ public class Alumno extends Usuario{
     int AñoEnCurso;
     double Promedio;
     String Facultad;
-
+ 
     public Alumno(int edad, int ID, String Carrera, int AñoEnCurso, double Promedio, String Facultad, String Nombre, String Apellido, int NumeroDeRegistro, String Username, String Password) {
         super(Nombre, Apellido, NumeroDeRegistro, Username, Password);
         this.edad = edad;

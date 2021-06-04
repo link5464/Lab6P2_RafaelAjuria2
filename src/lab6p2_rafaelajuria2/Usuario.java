@@ -18,7 +18,7 @@ public class Usuario {
 
     public Usuario() {
     }
-    
+     
 
     public Usuario(String Nombre, String Apellido, int NumeroDeRegistro, String Username, String Password) {
         this.Nombre = Nombre;
