@@ -30,21 +30,175 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog_LoginScreen = new javax.swing.JDialog();
+        jLabel_LoginScreen = new javax.swing.JLabel();
+        jLabel_Username = new javax.swing.JLabel();
+        jTextField_Username = new javax.swing.JTextField();
+        jLabel_Password = new javax.swing.JLabel();
+        jPasswordField_Password = new javax.swing.JPasswordField();
+        jRadioButton_Alumno = new javax.swing.JRadioButton();
+        jLabel_Rol = new javax.swing.JLabel();
+        jRadioButton_Alumno1 = new javax.swing.JRadioButton();
+        jRadioButton_Alumno2 = new javax.swing.JRadioButton();
+        jButton_LoginAction = new javax.swing.JButton();
+        buttonGroup_LoginPrivileges = new javax.swing.ButtonGroup();
+        jLabel_Laboratorio6 = new javax.swing.JLabel();
+        jButton_LoginWindow = new javax.swing.JButton();
+        jButton_Salir = new javax.swing.JButton();
+
+        jLabel_LoginScreen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_LoginScreen.setText("Login Screen");
+
+        jLabel_Username.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel_Username.setText("Username:");
+
+        jTextField_Username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_UsernameActionPerformed(evt);
+            }
+        });
+
+        jLabel_Password.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel_Password.setText("Password:");
+
+        jPasswordField_Password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField_PasswordActionPerformed(evt);
+            }
+        });
+
+        jRadioButton_Alumno.setText("Alumno");
+
+        jLabel_Rol.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Rol.setText("Seleccione su Rol:");
+
+        jRadioButton_Alumno1.setText("Maestro");
+
+        jRadioButton_Alumno2.setText("Administrador del Sistema");
+
+        jButton_LoginAction.setText("Iniciar Sesion");
+
+        javax.swing.GroupLayout jDialog_LoginScreenLayout = new javax.swing.GroupLayout(jDialog_LoginScreen.getContentPane());
+        jDialog_LoginScreen.getContentPane().setLayout(jDialog_LoginScreenLayout);
+        jDialog_LoginScreenLayout.setHorizontalGroup(
+            jDialog_LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_LoginScreenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialog_LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel_LoginScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel_Rol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jDialog_LoginScreenLayout.createSequentialGroup()
+                        .addGroup(jDialog_LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDialog_LoginScreenLayout.createSequentialGroup()
+                                .addGroup(jDialog_LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jDialog_LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField_Username, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                                    .addComponent(jPasswordField_Password)))
+                            .addGroup(jDialog_LoginScreenLayout.createSequentialGroup()
+                                .addComponent(jRadioButton_Alumno, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton_Alumno1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jRadioButton_Alumno2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jDialog_LoginScreenLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jButton_LoginAction, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jDialog_LoginScreenLayout.setVerticalGroup(
+            jDialog_LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_LoginScreenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel_LoginScreen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_Username))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPasswordField_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel_Rol)
+                .addGap(2, 2, 2)
+                .addGroup(jDialog_LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton_Alumno)
+                    .addComponent(jRadioButton_Alumno1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton_Alumno2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_LoginAction)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel_Laboratorio6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Laboratorio6.setText("Laboratorio #6");
+
+        jButton_LoginWindow.setText("Login");
+        jButton_LoginWindow.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_LoginWindowMouseClicked(evt);
+            }
+        });
+
+        jButton_Salir.setText("Salir");
+        jButton_Salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_SalirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel_Laboratorio6, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                    .addComponent(jButton_LoginWindow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton_Salir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel_Laboratorio6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_LoginWindow)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_Salir)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton_SalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_SalirMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton_SalirMouseClicked
+
+    private void jPasswordField_PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField_PasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField_PasswordActionPerformed
+
+    private void jTextField_UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_UsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_UsernameActionPerformed
+
+    private void jButton_LoginWindowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_LoginWindowMouseClicked
+        // TODO add your handling code here:
+        jDialog_LoginScreen.pack();
+        jDialog_LoginScreen.setVisible(true);
+    }//GEN-LAST:event_jButton_LoginWindowMouseClicked
 
     /**
      * @param args the command line arguments
@@ -128,5 +282,20 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup_LoginPrivileges;
+    private javax.swing.JButton jButton_LoginAction;
+    private javax.swing.JButton jButton_LoginWindow;
+    private javax.swing.JButton jButton_Salir;
+    private javax.swing.JDialog jDialog_LoginScreen;
+    private javax.swing.JLabel jLabel_Laboratorio6;
+    private javax.swing.JLabel jLabel_LoginScreen;
+    private javax.swing.JLabel jLabel_Password;
+    private javax.swing.JLabel jLabel_Rol;
+    private javax.swing.JLabel jLabel_Username;
+    private javax.swing.JPasswordField jPasswordField_Password;
+    private javax.swing.JRadioButton jRadioButton_Alumno;
+    private javax.swing.JRadioButton jRadioButton_Alumno1;
+    private javax.swing.JRadioButton jRadioButton_Alumno2;
+    private javax.swing.JTextField jTextField_Username;
     // End of variables declaration//GEN-END:variables
 }
