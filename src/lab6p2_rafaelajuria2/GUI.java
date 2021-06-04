@@ -5,6 +5,9 @@
  */
 package lab6p2_rafaelajuria2;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 /**
  * 
  * @author rajur
@@ -76,6 +79,52 @@ public class GUI extends javax.swing.JFrame {
                 new GUI().setVisible(true);
             }
         });
+    }
+    //CRUDs
+        //Alumnos
+            //Create
+    public static void AgregarAlumno(int edad, int ID, String Carrera, int AñoEnCurso, double Promedio, String Facultad, String Nombre, String Apellido, int NumeroDeRegistro, String Username, String Password) throws IOException
+    {
+       AdministradorAlumnos Admin= new AdministradorAlumnos("./alumnos.txt");        
+        Admin.LoadFile();
+        Alumno Temporal = new Alumno(edad,ID,Carrera,AñoEnCurso,Promedio,Facultad,Nombre,Apellido,NumeroDeRegistro,Username,Password);
+        Admin.getAlumnosGuardados().add(Temporal);        
+        Admin.WriteFile(); 
+    }
+            //Read
+    public static ArrayList<Alumno> LeerAlumnos()
+    {
+       ArrayList<Alumno> output;
+       AdministradorAlumnos Admin= new AdministradorAlumnos("./alumnos.txt");        
+       Admin.LoadFile(); 
+       output=Admin.getAlumnosGuardados();
+       return output;
+    }
+            //Update
+    public static void ActualizarAlumnos(int Position,int edad, int ID, String Carrera, int AñoEnCurso, double Promedio, String Facultad, String Nombre, String Apellido, int NumeroDeRegistro, String Username, String Password) throws IOException
+    {
+      AdministradorAlumnos Admin= new AdministradorAlumnos("./alumnos.txt");        
+      Admin.LoadFile();
+      Admin.getAlumnosGuardados().get(Position).setEdad(edad);
+      Admin.getAlumnosGuardados().get(Position).setID(ID);
+      Admin.getAlumnosGuardados().get(Position).setCarrera(Carrera);
+      Admin.getAlumnosGuardados().get(Position).setAñoEnCurso(AñoEnCurso);
+      Admin.getAlumnosGuardados().get(Position).setPromedio(Promedio);
+      Admin.getAlumnosGuardados().get(Position).setFacultad(Facultad);
+      Admin.getAlumnosGuardados().get(Position).setNombre(Nombre);
+      Admin.getAlumnosGuardados().get(Position).setApellido(Apellido);
+      Admin.getAlumnosGuardados().get(Position).setNumeroDeRegistro(NumeroDeRegistro);
+      Admin.getAlumnosGuardados().get(Position).setUsername(Username);
+      Admin.getAlumnosGuardados().get(Position).setPassword(Password);
+      Admin.WriteFile();
+    }
+            //Delete
+    public static void BorrarAlumno(int Position) throws IOException
+    {
+      AdministradorAlumnos Admin= new AdministradorAlumnos("./alumnos.txt");        
+      Admin.LoadFile();
+      Admin.getAlumnosGuardados().remove(Position);
+      Admin.WriteFile();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
