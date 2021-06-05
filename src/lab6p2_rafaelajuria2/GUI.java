@@ -7,6 +7,8 @@ package lab6p2_rafaelajuria2;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * 
@@ -38,13 +40,38 @@ public class GUI extends javax.swing.JFrame {
         jPasswordField_Password = new javax.swing.JPasswordField();
         jRadioButton_Alumno = new javax.swing.JRadioButton();
         jLabel_Rol = new javax.swing.JLabel();
-        jRadioButton_Alumno1 = new javax.swing.JRadioButton();
-        jRadioButton_Alumno2 = new javax.swing.JRadioButton();
+        jRadioButton_Maestro = new javax.swing.JRadioButton();
+        jRadioButton_Admin = new javax.swing.JRadioButton();
         jButton_LoginAction = new javax.swing.JButton();
         buttonGroup_LoginPrivileges = new javax.swing.ButtonGroup();
+        jDialog_CreateUserScreen = new javax.swing.JDialog();
+        jLabel_CreateUser = new javax.swing.JLabel();
+        jLabel_Tipo = new javax.swing.JLabel();
+        jRadioButton_Alumno1 = new javax.swing.JRadioButton();
+        jRadioButton_Maestro1 = new javax.swing.JRadioButton();
+        jLabel_NuevoNombre = new javax.swing.JLabel();
+        jTextField_NuevoNombre = new javax.swing.JTextField();
+        jLabel_NuevoApellido = new javax.swing.JLabel();
+        jTextField_NuevoApellido = new javax.swing.JTextField();
+        jTextField_NuevoNumReg = new javax.swing.JTextField();
+        jLabel_NuevoNumReg = new javax.swing.JLabel();
+        jTextField_NuevaCarrera = new javax.swing.JTextField();
+        jLabel_NuevaCarrera = new javax.swing.JLabel();
+        jTextField_NuevoAño = new javax.swing.JTextField();
+        jLabel_NuevoAño = new javax.swing.JLabel();
+        jLabel_Facultad = new javax.swing.JLabel();
+        jRadioButton_Licenciatura = new javax.swing.JRadioButton();
+        jRadioButton_Ingenieria = new javax.swing.JRadioButton();
+        jRadioButton_Medicina = new javax.swing.JRadioButton();
+        jTextField_NuevoPromedio = new javax.swing.JTextField();
+        jLabel_NuevoPromedio = new javax.swing.JLabel();
+        jButton_CrearNuevoUsuario = new javax.swing.JButton();
+        buttonGroup_TipoDeUsuarioCreado = new javax.swing.ButtonGroup();
+        buttonGroup_Facultad = new javax.swing.ButtonGroup();
         jLabel_Laboratorio6 = new javax.swing.JLabel();
         jButton_LoginWindow = new javax.swing.JButton();
         jButton_Salir = new javax.swing.JButton();
+        jButton_CreateUser = new javax.swing.JButton();
 
         jLabel_LoginScreen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_LoginScreen.setText("Login Screen");
@@ -67,14 +94,17 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup_LoginPrivileges.add(jRadioButton_Alumno);
         jRadioButton_Alumno.setText("Alumno");
 
         jLabel_Rol.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_Rol.setText("Seleccione su Rol:");
 
-        jRadioButton_Alumno1.setText("Maestro");
+        buttonGroup_LoginPrivileges.add(jRadioButton_Maestro);
+        jRadioButton_Maestro.setText("Maestro");
 
-        jRadioButton_Alumno2.setText("Administrador del Sistema");
+        buttonGroup_LoginPrivileges.add(jRadioButton_Admin);
+        jRadioButton_Admin.setText("Administrador del Sistema");
 
         jButton_LoginAction.setText("Iniciar Sesion");
 
@@ -100,8 +130,8 @@ public class GUI extends javax.swing.JFrame {
                             .addGroup(jDialog_LoginScreenLayout.createSequentialGroup()
                                 .addComponent(jRadioButton_Alumno, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton_Alumno1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jRadioButton_Alumno2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jRadioButton_Maestro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jRadioButton_Admin, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jDialog_LoginScreenLayout.createSequentialGroup()
@@ -127,12 +157,170 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addGroup(jDialog_LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton_Alumno)
-                    .addComponent(jRadioButton_Alumno1))
+                    .addComponent(jRadioButton_Maestro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton_Alumno2)
+                .addComponent(jRadioButton_Admin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton_LoginAction)
                 .addContainerGap(10, Short.MAX_VALUE))
+        );
+
+        jLabel_CreateUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_CreateUser.setText("Crear Usuario Nuevo");
+
+        jLabel_Tipo.setText("Tipo de Usuario:");
+
+        buttonGroup_TipoDeUsuarioCreado.add(jRadioButton_Alumno1);
+        jRadioButton_Alumno1.setText("Alumno");
+
+        buttonGroup_TipoDeUsuarioCreado.add(jRadioButton_Maestro1);
+        jRadioButton_Maestro1.setText("Maestro");
+
+        jLabel_NuevoNombre.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel_NuevoNombre.setText("Nombre:");
+
+        jLabel_NuevoApellido.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel_NuevoApellido.setText("Apellido:");
+
+        jTextField_NuevoNumReg.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField_NuevoNumRegFocusLost(evt);
+            }
+        });
+
+        jLabel_NuevoNumReg.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel_NuevoNumReg.setText("Num. de Registro:");
+
+        jTextField_NuevaCarrera.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField_NuevaCarreraFocusLost(evt);
+            }
+        });
+
+        jLabel_NuevaCarrera.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel_NuevaCarrera.setText("Carrera:");
+
+        jTextField_NuevoAño.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField_NuevoAñoFocusLost(evt);
+            }
+        });
+
+        jLabel_NuevoAño.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel_NuevoAño.setText("Año en Curso:");
+
+        jLabel_Facultad.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel_Facultad.setText("Facultad:");
+
+        buttonGroup_Facultad.add(jRadioButton_Licenciatura);
+        jRadioButton_Licenciatura.setText("Licenciatura");
+
+        buttonGroup_Facultad.add(jRadioButton_Ingenieria);
+        jRadioButton_Ingenieria.setText("Ingenieria");
+
+        buttonGroup_Facultad.add(jRadioButton_Medicina);
+        jRadioButton_Medicina.setText("Medicina");
+
+        jTextField_NuevoPromedio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField_NuevoPromedioFocusLost(evt);
+            }
+        });
+
+        jLabel_NuevoPromedio.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel_NuevoPromedio.setText("Promedio:");
+
+        jButton_CrearNuevoUsuario.setText("Crear Usuario");
+        jButton_CrearNuevoUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_CrearNuevoUsuarioMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog_CreateUserScreenLayout = new javax.swing.GroupLayout(jDialog_CreateUserScreen.getContentPane());
+        jDialog_CreateUserScreen.getContentPane().setLayout(jDialog_CreateUserScreenLayout);
+        jDialog_CreateUserScreenLayout.setHorizontalGroup(
+            jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_CreateUserScreenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel_CreateUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jDialog_CreateUserScreenLayout.createSequentialGroup()
+                        .addGroup(jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel_NuevoPromedio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel_Facultad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel_NuevoAño, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel_NuevaCarrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel_NuevoNumReg, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                            .addComponent(jLabel_NuevoApellido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel_NuevoNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel_Tipo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jRadioButton_Maestro1, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                            .addComponent(jRadioButton_Alumno1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField_NuevoNombre)
+                            .addComponent(jTextField_NuevoApellido)
+                            .addComponent(jTextField_NuevoNumReg)
+                            .addComponent(jTextField_NuevaCarrera)
+                            .addComponent(jTextField_NuevoAño)
+                            .addComponent(jRadioButton_Licenciatura, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioButton_Ingenieria, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioButton_Medicina, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_NuevoPromedio))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CreateUserScreenLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton_CrearNuevoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
+        );
+        jDialog_CreateUserScreenLayout.setVerticalGroup(
+            jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_CreateUserScreenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel_CreateUser)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jDialog_CreateUserScreenLayout.createSequentialGroup()
+                        .addComponent(jRadioButton_Alumno1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton_Maestro1))
+                    .addComponent(jLabel_Tipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField_NuevoNombre)
+                    .addComponent(jLabel_NuevoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_NuevoApellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField_NuevoApellido))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_NuevoNumReg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField_NuevoNumReg))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_NuevaCarrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField_NuevaCarrera))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Facultad)
+                    .addComponent(jRadioButton_Licenciatura))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton_Ingenieria)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton_Medicina)
+                .addGap(28, 28, 28)
+                .addGroup(jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_NuevoAño, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField_NuevoAño))
+                .addGap(3, 3, 3)
+                .addGroup(jDialog_CreateUserScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_NuevoPromedio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField_NuevoPromedio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_CrearNuevoUsuario))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -154,6 +342,13 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jButton_CreateUser.setText("Crear Usuario");
+        jButton_CreateUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_CreateUserMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -161,9 +356,10 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel_Laboratorio6, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                    .addComponent(jLabel_Laboratorio6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton_LoginWindow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton_Salir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton_Salir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton_CreateUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -173,6 +369,8 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jLabel_Laboratorio6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton_LoginWindow)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_CreateUser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton_Salir)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -199,6 +397,51 @@ public class GUI extends javax.swing.JFrame {
         jDialog_LoginScreen.pack();
         jDialog_LoginScreen.setVisible(true);
     }//GEN-LAST:event_jButton_LoginWindowMouseClicked
+
+    private void jButton_CreateUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_CreateUserMouseClicked
+        // TODO add your handling code here:
+        jDialog_CreateUserScreen.pack();
+        jDialog_CreateUserScreen.setVisible(true);
+    }//GEN-LAST:event_jButton_CreateUserMouseClicked
+
+    private void jTextField_NuevoNumRegFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_NuevoNumRegFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_NuevoNumRegFocusLost
+
+    private void jTextField_NuevaCarreraFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_NuevaCarreraFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_NuevaCarreraFocusLost
+
+    private void jTextField_NuevoAñoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_NuevoAñoFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_NuevoAñoFocusLost
+
+    private void jTextField_NuevoPromedioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_NuevoPromedioFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_NuevoPromedioFocusLost
+
+    private void jButton_CrearNuevoUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_CrearNuevoUsuarioMouseClicked
+        // TODO add your handling code here:
+        if(jRadioButton_Alumno1.isSelected())
+        {
+          int edad=0;
+          int ID=Integer.parseInt(jTextField_NuevoNumReg.getText());
+          String Carrera = jTextField_NuevaCarrera.getText();
+          int AñoEnCurso=Integer.parseInt(jTextField_NuevoAño.getText());
+          Double Promedio = Double.parseDouble(jTextField_NuevoPromedio.getText());
+          String Facultad = "";
+          String Nombre = jTextField_NuevoNombre.getText();
+          String Apellido = jTextField_NuevoApellido.getText();
+          int NumeroDeRegistro=Integer.parseInt(jTextField_NuevoNumReg.getText());
+          String Username = "prueba";
+          String Password = "prueba";
+            try {  
+                AgregarAlumno(edad,ID,Carrera,AñoEnCurso,Promedio,Facultad,Nombre,Apellido,NumeroDeRegistro,Username,Password);
+            } catch (IOException ex) {
+                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton_CrearNuevoUsuarioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -282,20 +525,45 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup_Facultad;
     private javax.swing.ButtonGroup buttonGroup_LoginPrivileges;
+    private javax.swing.ButtonGroup buttonGroup_TipoDeUsuarioCreado;
+    private javax.swing.JButton jButton_CrearNuevoUsuario;
+    private javax.swing.JButton jButton_CreateUser;
     private javax.swing.JButton jButton_LoginAction;
     private javax.swing.JButton jButton_LoginWindow;
     private javax.swing.JButton jButton_Salir;
+    private javax.swing.JDialog jDialog_CreateUserScreen;
     private javax.swing.JDialog jDialog_LoginScreen;
+    private javax.swing.JLabel jLabel_CreateUser;
+    private javax.swing.JLabel jLabel_Facultad;
     private javax.swing.JLabel jLabel_Laboratorio6;
     private javax.swing.JLabel jLabel_LoginScreen;
+    private javax.swing.JLabel jLabel_NuevaCarrera;
+    private javax.swing.JLabel jLabel_NuevoApellido;
+    private javax.swing.JLabel jLabel_NuevoAño;
+    private javax.swing.JLabel jLabel_NuevoNombre;
+    private javax.swing.JLabel jLabel_NuevoNumReg;
+    private javax.swing.JLabel jLabel_NuevoPromedio;
     private javax.swing.JLabel jLabel_Password;
     private javax.swing.JLabel jLabel_Rol;
+    private javax.swing.JLabel jLabel_Tipo;
     private javax.swing.JLabel jLabel_Username;
     private javax.swing.JPasswordField jPasswordField_Password;
+    private javax.swing.JRadioButton jRadioButton_Admin;
     private javax.swing.JRadioButton jRadioButton_Alumno;
     private javax.swing.JRadioButton jRadioButton_Alumno1;
-    private javax.swing.JRadioButton jRadioButton_Alumno2;
+    private javax.swing.JRadioButton jRadioButton_Ingenieria;
+    private javax.swing.JRadioButton jRadioButton_Licenciatura;
+    private javax.swing.JRadioButton jRadioButton_Maestro;
+    private javax.swing.JRadioButton jRadioButton_Maestro1;
+    private javax.swing.JRadioButton jRadioButton_Medicina;
+    private javax.swing.JTextField jTextField_NuevaCarrera;
+    private javax.swing.JTextField jTextField_NuevoApellido;
+    private javax.swing.JTextField jTextField_NuevoAño;
+    private javax.swing.JTextField jTextField_NuevoNombre;
+    private javax.swing.JTextField jTextField_NuevoNumReg;
+    private javax.swing.JTextField jTextField_NuevoPromedio;
     private javax.swing.JTextField jTextField_Username;
     // End of variables declaration//GEN-END:variables
 }

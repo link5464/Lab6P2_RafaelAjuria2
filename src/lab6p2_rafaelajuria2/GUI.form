@@ -28,9 +28,9 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jRadioButton_Alumno" min="-2" pref="77" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jRadioButton_Alumno1" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jRadioButton_Maestro" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jRadioButton_Alumno2" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
+                              <Component id="jRadioButton_Admin" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -64,10 +64,10 @@
                   <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jRadioButton_Alumno" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRadioButton_Alumno1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jRadioButton_Maestro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jRadioButton_Alumno2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioButton_Admin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton_LoginAction" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="10" max="32767" attributes="0"/>
@@ -106,6 +106,9 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="jRadioButton_Alumno">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup_LoginPrivileges"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Alumno"/>
           </Properties>
         </Component>
@@ -115,13 +118,19 @@
             <Property name="text" type="java.lang.String" value="Seleccione su Rol:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton_Alumno1">
+        <Component class="javax.swing.JRadioButton" name="jRadioButton_Maestro">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup_LoginPrivileges"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Maestro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton_Alumno2">
+        <Component class="javax.swing.JRadioButton" name="jRadioButton_Admin">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup_LoginPrivileges"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Administrador del Sistema"/>
           </Properties>
         </Component>
@@ -133,6 +142,243 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup_LoginPrivileges">
+    </Component>
+    <Container class="javax.swing.JDialog" name="jDialog_CreateUserScreen">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel_CreateUser" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLabel_NuevoPromedio" max="32767" attributes="0"/>
+                              <Component id="jLabel_Facultad" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel_NuevoAño" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jLabel_NuevaCarrera" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jLabel_NuevoNumReg" alignment="1" pref="103" max="32767" attributes="0"/>
+                              <Component id="jLabel_NuevoApellido" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel_NuevoNombre" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel_Tipo" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jRadioButton_Maestro1" pref="112" max="32767" attributes="0"/>
+                              <Component id="jRadioButton_Alumno1" max="32767" attributes="0"/>
+                              <Component id="jTextField_NuevoNombre" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextField_NuevoApellido" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextField_NuevoNumReg" max="32767" attributes="0"/>
+                              <Component id="jTextField_NuevaCarrera" max="32767" attributes="0"/>
+                              <Component id="jTextField_NuevoAño" max="32767" attributes="0"/>
+                              <Component id="jRadioButton_Licenciatura" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jRadioButton_Ingenieria" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jRadioButton_Medicina" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jTextField_NuevoPromedio" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jButton_CrearNuevoUsuario" min="-2" pref="111" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel_CreateUser" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jRadioButton_Alumno1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jRadioButton_Maestro1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel_Tipo" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jTextField_NuevoNombre" max="32767" attributes="0"/>
+                      <Component id="jLabel_NuevoNombre" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel_NuevoApellido" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jTextField_NuevoApellido" alignment="3" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel_NuevoNumReg" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jTextField_NuevoNumReg" alignment="3" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel_NuevaCarrera" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jTextField_NuevaCarrera" alignment="3" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel_Facultad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jRadioButton_Licenciatura" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jRadioButton_Ingenieria" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jRadioButton_Medicina" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel_NuevoAño" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jTextField_NuevoAño" alignment="3" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel_NuevoPromedio" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jTextField_NuevoPromedio" alignment="3" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton_CrearNuevoUsuario" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel_CreateUser">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Crear Usuario Nuevo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel_Tipo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tipo de Usuario:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="jRadioButton_Alumno1">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup_TipoDeUsuarioCreado"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Alumno"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="jRadioButton_Maestro1">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup_TipoDeUsuarioCreado"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Maestro"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel_NuevoNombre">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="11"/>
+            <Property name="text" type="java.lang.String" value="Nombre:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField_NuevoNombre">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel_NuevoApellido">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="11"/>
+            <Property name="text" type="java.lang.String" value="Apellido:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField_NuevoApellido">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField_NuevoNumReg">
+          <Events>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextField_NuevoNumRegFocusLost"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel_NuevoNumReg">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="11"/>
+            <Property name="text" type="java.lang.String" value="Num. de Registro:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField_NuevaCarrera">
+          <Events>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextField_NuevaCarreraFocusLost"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel_NuevaCarrera">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="11"/>
+            <Property name="text" type="java.lang.String" value="Carrera:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField_NuevoA&#xf1;o">
+          <Events>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextField_NuevoA&#xf1;oFocusLost"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel_NuevoA&#xf1;o">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="11"/>
+            <Property name="text" type="java.lang.String" value="A&#xf1;o en Curso:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel_Facultad">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="11"/>
+            <Property name="text" type="java.lang.String" value="Facultad:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="jRadioButton_Licenciatura">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup_Facultad"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Licenciatura"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="jRadioButton_Ingenieria">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup_Facultad"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ingenieria"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="jRadioButton_Medicina">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup_Facultad"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Medicina"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField_NuevoPromedio">
+          <Events>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextField_NuevoPromedioFocusLost"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel_NuevoPromedio">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="11"/>
+            <Property name="text" type="java.lang.String" value="Promedio:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton_CrearNuevoUsuario">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Crear Usuario"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_CrearNuevoUsuarioMouseClicked"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_TipoDeUsuarioCreado">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup_Facultad">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -160,9 +406,10 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel_Laboratorio6" pref="161" max="32767" attributes="0"/>
+                  <Component id="jLabel_Laboratorio6" max="32767" attributes="0"/>
                   <Component id="jButton_LoginWindow" max="32767" attributes="0"/>
                   <Component id="jButton_Salir" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jButton_CreateUser" alignment="1" pref="161" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -175,6 +422,8 @@
               <Component id="jLabel_Laboratorio6" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jButton_LoginWindow" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButton_CreateUser" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jButton_Salir" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -203,6 +452,14 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_SalirMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton_CreateUser">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Crear Usuario"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_CreateUserMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>
